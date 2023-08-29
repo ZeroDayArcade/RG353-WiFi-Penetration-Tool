@@ -57,6 +57,10 @@ In the example above you can see that my test network "ZDA_TP_LINK" was cracked 
 <a href="https://github.com/ZeroDayArcade/capture-handshake-wpa-wifi-hacking">Capturing 4-Way Handshake from WPA/WPA2 Networks</a>  
 <a href="https://github.com/ZeroDayArcade/cracking-wpa-with-handshake">Cracking WPA/WPA2 Passwords with 4-Way Handshake</a>  
 
+**More Retro Gaming Handhelds:**  
+<a href="https://www.youtube.com/shorts/auvxesBrZwU">Connecting a Game Boy Advance SP to the Internet</a>  
+<a href="https://www.youtube.com/shorts/94pTU2rXiVE">Multiplayer Quake 1 on a Nintendo DS vs PC Player: Crossplay</a>  
+<a href="https://zerodayarcade.com/tutorials/anbernic-rg353-quake-multiplayer">Tutorial - Crossplay Quake on Anbernic RG353PS vs PC</a>
 
 # Find Hacking Bounties in Gaming:
 🎮  <a href="https://zerodayarcade.com/bounties">zerodayarcade.com/bounties</a>
