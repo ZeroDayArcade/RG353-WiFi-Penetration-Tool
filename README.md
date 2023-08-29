@@ -11,7 +11,7 @@ The cracking script is more for demonstration purposes than anything, but for lo
 
 ## Steps to using the tool
 
-1. ***Install UnofficialOS*** on your RG353P/PS/M/etc
+1. ***Install UnofficialOS*** on your RG353P/PS/M/etc (Backup your original OS or use a seperate Micro SD in slot TFT1)
 2. Clone this repo and ***copy the RG353-WiFi-Pen directory*** to the "ports/" directory of the slot TFT2 (Roms) Micro SD card
 3. With the TFT2 Micro SD back in the RG353, press the 'START' button and ***go to Network Settings*** and make sure WiFi is enabled
 4. Select the target WiFi network and ***enter a random password for the network***
@@ -22,7 +22,7 @@ The cracking script is more for demonstration purposes than anything, but for lo
 10. Now ***run the "crack" script*** from the same place you ran the capture script. If the password of the network is part of the `passlist.txt` dictionary, than the password will be cracked. Otherwise you can take the hash line saved to `hashline.txt` in the same RG353-WiFi-Pen directory for later cracking with hashcat or other cracking tools (you won't see it from the main menu but it's on the Micro SD if you put it in your computer).
 
 
-# More ZDA Code and Content:
+# More ZDA Code and Resources:
 **Learn Reverse Engineering, Assembly, Code Injection and More:**  
 🎓  <a href="https://zerodayarcade.com/tutorials">zerodayarcade.com/tutorials</a> 
 
