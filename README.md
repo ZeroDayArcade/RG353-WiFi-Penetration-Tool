@@ -1,7 +1,7 @@
 # RG353-WiFi-Penetration-Tool
 Hacking WiFi Networks with the Anbernic RG353 line of hardware and other Retro Gaming Handhelds
 
-![IMG_4443](https://github.com/ZeroDayArcade/RG353-WiFi-Penetration-Tool/assets/141867962/292c51b3-1f78-4382-a247-f172a24ea28b)
+![IMG_4443](https://github.com/ZeroDayArcade/RG353-WiFi-Penetration-Tool/assets/141867962/f7f63333-83e5-4249-9d8c-b1e4334692a5)
 
 This repo contains modified versions of my <a href="https://github.com/search?q=owner%3AZeroDayArcade+wpa&type=repositories">WiFi hacking python scripts</a>, now meant to run on Anbernic RG353 series hardware using the RG353's built in WiFi module. This code was specifically tested with the RG353PS, using the <a href="https://github.com/RetroGFX/UnofficialOS">UnofficialOS</a> operating system with the RG353P image from <a href="https://github.com/RetroGFX/UnofficialOS/releases/tag/20230427">release 20230427</a>. The scripts should work with UnofficialOS on other varients of the RG353 without modification assuming the same basic file structure. It can easily be modified to run on many other Linux-based Retro Handhelds that have WiFi capabilites.
 
@@ -21,29 +21,29 @@ Also, and I hope this goes without saying, only ever hack a network you own and 
 
 1. ***Install UnofficialOS*** on your RG353P/PS/M/etc (Backup your original OS or use a seperate Micro SD in slot TF1)  
 
-   ![IMG_4436](https://github.com/ZeroDayArcade/RG353-WiFi-Penetration-Tool/assets/141867962/653041d7-0f8c-4074-bfa3-cf51e018d8e8)
+   ![IMG_4436](https://github.com/ZeroDayArcade/RG353-WiFi-Penetration-Tool/assets/141867962/71d1aa06-79b2-4d0d-a694-41d314c5d848)
 2. Clone this repo and ***copy the RG353-WiFi-Pen directory*** to the "ports/" directory of the slot TF2 (Roms) MicroSD card
 3. With the TF2 MicroSD back in the RG353, press the 'START' button and ***go to Network Settings*** and make sure WiFi is enabled
 4. Select the target WiFi network and ***enter a random password for the network***
 5. Exit the menus and ***navigate to "PORTS"*** on the main interface  
 
-![IMG_4440](https://github.com/ZeroDayArcade/RG353-WiFi-Penetration-Tool/assets/141867962/dbd82ccd-b9fd-4d0b-a6ad-9edff2188816)
+![IMG_4440](https://github.com/ZeroDayArcade/RG353-WiFi-Penetration-Tool/assets/141867962/feba237b-55b2-4772-b7d2-2da3cb9984c8)
 
 6. Enter "PORTS" and ***select the "RG353-WiFi-Pen" directory***, you will see two options: ***capture*** and ***crack***  
 
-![IMG_4441](https://github.com/ZeroDayArcade/RG353-WiFi-Penetration-Tool/assets/141867962/2ff95edd-189d-49ad-8341-036e85e3c738)
+![IMG_4441](https://github.com/ZeroDayArcade/RG353-WiFi-Penetration-Tool/assets/141867962/5bc2a269-7498-40a8-9a5e-a3cd1e639ad6)
 
 7. ***Select "capture"*** to run the PMKID capture script on you target network. If it is unable to capture PMKID it will timeout after a minute  
 
-![IMG_4442](https://github.com/ZeroDayArcade/RG353-WiFi-Penetration-Tool/assets/141867962/383554bf-e82b-4204-a974-487636eac724)
+![IMG_4442](https://github.com/ZeroDayArcade/RG353-WiFi-Penetration-Tool/assets/141867962/00b487eb-8bac-4436-a887-2e33b36a9857)
 
 8. If the PMKID capture was successfull you will see the PMKID, MAC addresses and SSID printed to the screen along the a hashcat format hash line which has been saved to the MicroSD card in `ports/RG353-WiFi-Pen/hashline.txt`. If the PMKID is all 0's, that likely means the access point you are targeting does not append a PMKID to the end of the first EAPol frame and is not vulnerable to this type of attack. Otherwise you're ready to crack  
 
-![IMG_4446](https://github.com/ZeroDayArcade/RG353-WiFi-Penetration-Tool/assets/141867962/618305cd-7283-4714-a80f-aff746f46513)
+![IMG_4446](https://github.com/ZeroDayArcade/RG353-WiFi-Penetration-Tool/assets/141867962/29c31f4e-e487-4020-85dd-600004586860)
 
 9. Now ***run the "crack" script*** from the same place you ran the capture script. If the password of the network is part of the `passlist.txt` dictionary, than the password will be cracked. Otherwise you can take the hash line saved to `hashline.txt` for later cracking with hashcat or other cracking tools (you won't see it from the main menu but it's on the MicroSD if you open the MicroSD on your computer).  
 
-![IMG_4447](https://github.com/ZeroDayArcade/RG353-WiFi-Penetration-Tool/assets/141867962/f0982460-94f5-4507-abb7-fa19a88df0c9)
+![IMG_4447](https://github.com/ZeroDayArcade/RG353-WiFi-Penetration-Tool/assets/141867962/5d5e5f28-5455-4596-bed9-8933b5f54ea7)
 
 In the example above you can see that my test network "ZDA_TP_LINK" was cracked and the password was "minecraft". If you are testing with the on board cracking script, use an 8+ character password that is in your `passlist.txt` file (Note some passwords in the sample `passlist.txt` are too short, pick one that's at least 8) to ensure that everything is working correctly.
 
