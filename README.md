@@ -11,6 +11,8 @@ The cracking script is more for demonstration purposes than anything, but for lo
 
 ## Steps to using the tool
 
+*TL;DR: Use UnofficialOS, copy "RG353-WiFi-Pen/" to "ports/" on ROMS MicroSD, run scripts from "Ports" Menu*
+
 1. ***Install UnofficialOS*** on your RG353P/PS/M/etc (Backup your original OS or use a seperate Micro SD in slot TFT1)
 2. Clone this repo and ***copy the RG353-WiFi-Pen directory*** to the "ports/" directory of the slot TFT2 (Roms) Micro SD card
 3. With the TFT2 Micro SD back in the RG353, press the 'START' button and ***go to Network Settings*** and make sure WiFi is enabled
