@@ -1,5 +1,5 @@
 # RG353-WiFi-Penetration-Tool
-Hacking WiFi Networks with the Anbernic RG353 line of hardware and other Retro Gaming Handhelds. See it in action: <a href="https://www.youtube.com/shorts/67YwaNE3pF4">Video</a>
+Hacking WiFi Networks with the Anbernic RG353 line of hardware and other Retro Gaming Handhelds. <a target="_blank" href="https://www.youtube.com/shorts/67YwaNE3pF4">Video</a>
 
 ![IMG_4443](https://github.com/ZeroDayArcade/RG353-WiFi-Penetration-Tool/assets/141867962/f7f63333-83e5-4249-9d8c-b1e4334692a5)
 
