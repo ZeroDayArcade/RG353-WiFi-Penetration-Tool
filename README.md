@@ -1,5 +1,5 @@
 # RG353-WiFi-Penetration-Tool
-Hacking WiFi Networks with the Anbernic RG353 line of hardware and other Retro Gaming Handhelds. <a target="_blank" href="https://www.youtube.com/shorts/67YwaNE3pF4">Video</a>
+Hacking WiFi Networks with the Anbernic RG353 line of hardware and other Retro Gaming Handhelds.
 
 ![IMG_4443](https://github.com/ZeroDayArcade/RG353-WiFi-Penetration-Tool/assets/141867962/f7f63333-83e5-4249-9d8c-b1e4334692a5)
 
@@ -46,6 +46,8 @@ Also, and I hope this goes without saying, only ever hack a network you own and 
 ![IMG_4447](https://github.com/ZeroDayArcade/RG353-WiFi-Penetration-Tool/assets/141867962/5d5e5f28-5455-4596-bed9-8933b5f54ea7)
 
 In the example above you can see that my test network "ZDA_TP_LINK" was cracked and the password was "minecraft". If you are testing with the on board cracking script, use an 8+ character password that is in your `passlist.txt` file (Note some passwords in the sample `passlist.txt` are too short, pick one that's at least 8) to ensure that everything is working correctly.
+
+See it in action: <a href="https://www.youtube.com/shorts/67YwaNE3pF4">Video</a>
 
 # More ZDA Code and Resources:
 **Learn Reverse Engineering, Assembly, Code Injection and More:**  
