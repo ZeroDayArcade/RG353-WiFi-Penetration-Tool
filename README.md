@@ -13,7 +13,7 @@ The cracking script is more for demonstration purposes than anything, but for lo
 
 I successfully tested this on WPA2 with a TP-Link Archer C1200 v2.0 Router (Firmware Version 2.0.0) with both 2.4Ghz and 5Ghz networks. I found capturing PMKID on 2.4Ghz to work almost 100% of the time and within a couple of seconds, whereas capturing from 5Ghz was less reliable only working ~50% of the time and often taking longer. Make sure in testing that networks are visible (not hidden). You may be able to get more reliability out of 5Ghz captures by playing around with when WiFi gets restarted on the device (see `capture.sh` and potentially move WiFi restart into `capture_pmkid.py` with `os.system`) and/or by removing timeout code in `capture_pmkid.py`. Although they are very common, only WPA/WPA2 networks that use PMKID are vulnerable to this attack. 
 
-Also, and I hope this goes without saying, only ever hack a network you own and have legal permission to hack. This is for educational purposes only and to help you advance your penetration testing skills and knowledge.
+***Only ever hack a network you own and have legal permission to hack. This is for educational purposes only and to help you advance your penetration testing skills and knowledge.***
 
 ## Steps to using the tool
 
@@ -47,7 +47,7 @@ Also, and I hope this goes without saying, only ever hack a network you own and 
 
 In the example above you can see that my test network "ZDA_TP_LINK" was cracked and the password was "minecraft". If you are testing with the on board cracking script, use an 8+ character password that is in your `passlist.txt` file (Note some passwords in the sample `passlist.txt` are too short, pick one that's at least 8) to ensure that everything is working correctly.
 
-See it in action: <a href="https://www.youtube.com/shorts/67YwaNE3pF4">Video</a>
+### *See it in action:* <a href="https://www.youtube.com/shorts/67YwaNE3pF4">Video</a>
 
 # More ZDA Code and Resources:
 **Learn Reverse Engineering, Assembly, Code Injection and More:**  
