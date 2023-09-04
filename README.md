@@ -13,7 +13,7 @@ The cracking script is more for demonstration purposes than anything, but for lo
 
 I successfully tested this on WPA2 with a TP-Link Archer C1200 v2.0 Router (Firmware Version 2.0.0) with both 2.4Ghz and 5Ghz networks. I found capturing PMKID on 2.4Ghz to work almost 100% of the time and within a couple of seconds, whereas capturing from 5Ghz was less reliable only working ~50% of the time and often taking longer. Make sure in testing that networks are visible (not hidden). You may be able to get more reliability out of 5Ghz captures by playing around with when WiFi gets restarted on the device (see `capture.sh` and potentially move WiFi restart into `capture_pmkid.py` with `os.system`) and/or by removing timeout code in `capture_pmkid.py`. Although they are very common, only WPA/WPA2 networks that use PMKID are vulnerable to this attack. 
 
-***Warning:** Only ever hack a network you own and have legal permission to hack. The code and information in this repository are for educational purposes only. Study it to understand concepts in penetration testing and only ever use it in a controlled environment for security analysis, password recovery and learning.* 
+***Reminder:** Only ever hack a network you own and have legal permission to hack. Any hacking skills/knowledge gained from this repository should only be used in the context of security research, penetration testing, password recovery, and education.* 
 
 ## Steps to using the tool
 
