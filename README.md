@@ -64,18 +64,4 @@ In the example above you can see that my test network "ZDA_TP_LINK" was cracked 
 <a href="https://www.youtube.com/shorts/94pTU2rXiVE">Multiplayer Quake 1 on a Nintendo DS vs PC Player: Crossplay</a>  
 <a href="https://zerodayarcade.com/tutorials/anbernic-rg353-quake-multiplayer">Tutorial - Crossplay Quake on Anbernic RG353PS vs PC</a>
 
-# Find Hacking Bounties in Gaming:
-🎮  <a href="https://zerodayarcade.com/bounties">zerodayarcade.com/bounties</a>
-
-<a href="https://zerodayarcade.com/bounties/ps-vita">PS Vita Bounties</a>  
-<a href="https://zerodayarcade.com/bounties/ps4">PS4 Bounties</a>  
-<a href="https://zerodayarcade.com/bounties/ps5">PS5 Bounties</a>  
-<a href="https://zerodayarcade.com/bounties/gamecube">GameCube Bounties</a>  
-<a href="https://zerodayarcade.com/bounties/3ds">3DS Bounties</a>  
-<a href="https://zerodayarcade.com/bounties/switch">Switch Bounties</a>  
-<a href="https://zerodayarcade.com/bounties/xbox-one">XBox One Bounties</a>  
-<a href="https://zerodayarcade.com/bounties/xbox-series-x-s">XBox Series X|S Bounties</a>  
-<a href="https://zerodayarcade.com/bounties/pc">PC/Mac Bounties</a>  
-<a href="https://zerodayarcade.com/bounties/other">RetroArch Bounties</a>  
-
 
